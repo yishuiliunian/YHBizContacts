@@ -20,6 +20,8 @@
 #import <DZCache/DZImageCache.h>
 #import "UIViewController+BarItem.h"
 #import "YHInputTableViewController.h"
+#import "DZURLRoute.h"
+#import "YHURLRouteDefines.h"
 
 @implementation YHPrivateContactsViewController
 
@@ -39,13 +41,18 @@
     KxMenuItem* firend = [KxMenuItem menuItem:@"添加联系人" image:DZCachedImageByName(@"ic_action_add_friend") target:self action:@selector(addFriend)];
     KxMenuItem* searchClass= [KxMenuItem menuItem:@"寻找班级" image:DZCachedImageByName(@"ic_action_search_cls") target:self action:@selector(searchClass)];
     KxMenuItem* searchChat = [KxMenuItem menuItem:@"搜索话题" image:DZCachedImageByName(@"ic_action_search_room") target:self action:@selector(searchChatContent)];
-    
-    NSArray* elements =@[firend, searchClass,searchChat];
+    KxMenuItem * addressBook = [KxMenuItem menuItem:@"手机联系人" image:nil target:self action:@selector(showAddressBookContacts)];
+    NSArray* elements =@[firend, searchClass,searchChat, addressBook];
     
     CGRect rect = CGRectMake(0, 0, 0, 0);
     rect.origin.x = CGRectGetWidth(self.view.bounds) - 33;
     rect.origin.y = CGRectGetHeight(self.navigationController.navigationBar.bounds) + 10;
     [KxMenu showMenuInView:[UIApplication sharedApplication].keyWindow fromRect:rect menuItems:elements];
+}
+
+- (void) showAddressBookContacts
+{
+    [[DZURLRoute defaultRoute] routeURL:DZURLRouteQueryLink(kYHURLShowAddressContacts, @{})];
 }
 
 - (void) searchChatContent
