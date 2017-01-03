@@ -41,8 +41,8 @@
     KxMenuItem* firend = [KxMenuItem menuItem:@"添加联系人" image:DZCachedImageByName(@"ic_action_add_friend") target:self action:@selector(addFriend)];
     KxMenuItem* searchClass= [KxMenuItem menuItem:@"寻找班级" image:DZCachedImageByName(@"ic_action_search_cls") target:self action:@selector(searchClass)];
     KxMenuItem* searchChat = [KxMenuItem menuItem:@"搜索话题" image:DZCachedImageByName(@"ic_action_search_room") target:self action:@selector(searchChatContent)];
-    KxMenuItem * addressBook = [KxMenuItem menuItem:@"手机联系人" image:nil target:self action:@selector(showAddressBookContacts)];
-    NSArray* elements =@[firend, searchClass,searchChat, addressBook];
+//    KxMenuItem * addressBook = [KxMenuItem menuItem:@"手机联系人" image:nil target:self action:@selector(showAddressBookContacts)];
+    NSArray* elements =@[firend, searchClass,searchChat];
     
     CGRect rect = CGRectMake(0, 0, 0, 0);
     rect.origin.x = CGRectGetWidth(self.view.bounds) - 33;

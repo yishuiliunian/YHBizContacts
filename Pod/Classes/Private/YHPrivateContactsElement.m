@@ -42,6 +42,7 @@
     YHFixContactItemElement* _activityItem;
     YHFixContactItemElement* _classItem;
     YHFixContactItemElement* _blackItem;
+    YHFixContactItemElement * _phoneContactsItem;
     BOOL _syncing;
 }
 @property (nonatomic, weak, readonly) YHPrivateContactsViewController* contactsViewController;
@@ -115,10 +116,18 @@
         
     }];
     //
+    _phoneContactsItem = [[YHFixContactItemElement alloc] initWithImage:DZCachedImageByName(@"face_black") title:@"手机联系人"];
+
+    [_phoneContactsItem setNextAction:^{
+        [[DZURLRoute defaultRoute] routeURL:DZURLRouteQueryLink(kYHURLShowAddressContacts, @{})];
+    }];
+    //
     
     [array insertObject:_blackItem atIndex:0];
+    [array insertObject:_phoneContactsItem atIndex:0];
     [array insertObject:_classItem atIndex:0];
     [array insertObject:_activityItem atIndex:0];
+
     
     ChatRoomInfo* chatroom  = [YHContactsManager shareManager].activeRoominfo;
     YHChatRoomContactItemElement* item = [[YHChatRoomContactItemElement alloc] initWithImage:DZCachedImageByName(@"face_room") title:chatroom.roomName];
