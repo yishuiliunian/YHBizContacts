@@ -78,7 +78,7 @@
     search.hidesBottomBarWhenPushed = YES;
     search.placeHolderView.label.text = @"没有找到匹配的人";
     search.placeHolderView.button.hidden = YES;
-    search.searchBar.placeholder = @"搜索昵称/手机号/哟呵号";
+    search.searchBar.placeholder = @"搜索昵称/哟呵号";
     [search view];
     search.tableView.mj_header = nil;
     search.tableView.mj_footer = nil;

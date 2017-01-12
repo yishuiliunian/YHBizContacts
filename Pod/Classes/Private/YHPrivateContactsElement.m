@@ -105,7 +105,6 @@
     }];
     
     
-    
      _blackItem = [[YHFixContactItemElement alloc] initWithImage:DZCachedImageByName(@"face_black") title:@"黑名单"];
     [_blackItem setNextAction:^(void) {
         
@@ -116,7 +115,7 @@
         
     }];
     //
-    _phoneContactsItem = [[YHFixContactItemElement alloc] initWithImage:DZCachedImageByName(@"face_black") title:@"手机联系人"];
+    _phoneContactsItem = [[YHFixContactItemElement alloc] initWithImage:DZCachedImageByName(@"face_mobile") title:@"手机联系人"];
 
     [_phoneContactsItem setNextAction:^{
         [[DZURLRoute defaultRoute] routeURL:DZURLRouteQueryLink(kYHURLShowAddressContacts, @{})];
